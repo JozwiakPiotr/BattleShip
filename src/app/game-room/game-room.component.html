@@ -1,0 +1,19 @@
+<div id="container" class="columns">
+    <div class="col1">
+        <div class="dummy"></div>
+        <div class="game-board">
+            <div *ngFor="let ship of ships" [ngClass]="ship.getClass()" [style]="ship.getTransition()"></div>
+            <div *ngFor="let shoot of leftShoots" [ngClass]="shoot.getClass()" [style]="shoot.getTransition()"></div>            
+        </div>
+    </div>
+    
+    <div class="col2">
+        <div class="dummy"></div>
+        <div class="game-board">
+            <div *ngFor="let shoot of rightShoots" [ngClass]="shoot.getClass()" [style]="shoot.getTransition()"></div>
+            <svg id="svgBoard" viewBox="0 0 10 10" class="svg-board" (click)="onMove($event)">
+                
+            </svg>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,110 @@
+.columns {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 1800px;    
+
+    display: flex;
+    justify-content: space-between;   
+    
+
+}
+
+.col1 {
+    position: relative;
+    width: 45%;
+}
+
+.col2 {
+    position: relative;
+    width: 45%;   
+}
+
+.svg-board {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.dummy {
+    height: 0;
+    padding-bottom: 100%;
+}
+
+ .game-board {
+     width: 100%;
+     height: 100%;
+     position: absolute;
+     top: 0;
+     left: 0;
+    
+     background: url(/assets/img/gameBoard.png);
+     background-size: contain;
+     
+ }
+
+ .ship {
+     position: absolute;
+     top: 0;
+     left: 0;
+     background-size: cover;
+ }
+
+
+ .width-2 {
+    width: 20%;
+    height: 10%;
+    background-image: url(/assets/img/shipW2.png);
+ }
+
+ .width-3 {
+    width: 30%;
+    height: 10%;
+    background-image: url(/assets/img/shipW3.png);
+ }
+
+ .width-4 {
+    width: 40%;
+    height: 10%;
+    background-image: url(/assets/img/shipW4.png);
+ }
+
+ .height-2 {
+    height: 20%;
+    width: 10%;
+    background-image: url(/assets/img/shipH2.png);
+ }
+
+ .height-3 {
+    height: 30%;
+    width: 10%;
+    background-image: url(/assets/img/shipH3.png);
+}
+
+.height-4 {
+    height: 40%;
+    width: 10%;
+    background-image: url(/assets/img/shipH4.png);
+}
+
+.hit {
+    height: 10%;
+    width: 10%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: contain;
+    background-image: url(/assets/img/hit.png);
+}
+
+.missed {
+    height: 10%;
+    width: 10%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: contain;
+    background-image: url(/assets/img/missed.png);
+}
