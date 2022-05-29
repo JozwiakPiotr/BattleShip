@@ -41,7 +41,7 @@ export class BattleShipGameHotSeats extends BattleShipGame {
         this.switchPlayer();
         
     }
-    
+
     endGame(message: string): void {
         
     }
@@ -73,7 +73,7 @@ export class BattleShipGameHotSeats extends BattleShipGame {
             for(let position of ship.getPositions()) {
                 
                 if(position.x == x && position.y == y) {
-                    ship.addHit;
+                    ship.addHit();
                     shoot.hit = true;
                     break;
                 }
