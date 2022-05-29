@@ -2,7 +2,6 @@ import { BattleShipGame } from "./BattleShipGame";
 import { Player } from "./models/Player";
 import { Ship } from "./models/Ship";
 import { Shoot } from "./models/Shoot";
-import { another } from "./strategies/another";
 import { RandomPlacedShipStrategy } from "./strategies/RandomPlacedShipsStrategy";
 
 export class BattleShipGameHotSeats extends BattleShipGame {
