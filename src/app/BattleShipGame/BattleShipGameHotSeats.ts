@@ -6,8 +6,7 @@ import { another } from "./strategies/another";
 import { RandomPlacedShipStrategy } from "./strategies/RandomPlacedShipsStrategy";
 
 export class BattleShipGameHotSeats extends BattleShipGame {
-    
-    another: another = new another();
+   
     name: string = "BattleShipHotSeats";
     boardWidth: number = 10;
     boardHeight: number = 10;
