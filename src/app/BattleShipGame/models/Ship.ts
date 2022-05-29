@@ -14,8 +14,7 @@ export class Ship {
         }
 
         this.hits++;
-        console.log("siema")
-        console.log(this.hits)
+        
         let length = this.width > this.height ? this.width : this.height;
 
         if(this.hits >= length) {

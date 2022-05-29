@@ -19,11 +19,9 @@ export class BattleShipGameHotSeats extends BattleShipGame {
     }
 
     start(): void {
-        //this.setCurrentPlayer();
-
-        this.placeShips();
-        
+        this.placeShips();        
     }
+
     onMove(x: number, y: number): void {
 
         if(this.nextPlayer.ships.length <= 0) {
@@ -43,6 +41,7 @@ export class BattleShipGameHotSeats extends BattleShipGame {
         this.switchPlayer();
         
     }
+    
     endGame(message: string): void {
         
     }
@@ -66,24 +65,7 @@ export class BattleShipGameHotSeats extends BattleShipGame {
         
         this.currentPlayer.ships = this.placedShipStrategy.placeShips(shipsStarter, this.boardWidth, this.boardHeight);
     }
-
-    getShips(): Ship[] {
-        return this.currentPlayer.ships;
-    }
-
-     switchPlayer(): void {
-         let temp = this.currentPlayer;
-         this.currentPlayer = this.nextPlayer;
-         this.nextPlayer = temp;
-     }
-
-    getLeftBoardShoots(): Shoot[] {
-        return this.nextPlayer.shoots;
-    }
-    getRightBoardShoots(): Shoot[] {
-        return this.currentPlayer.shoots;
-    }
-
+    
     makeShoot(x: number, y: number): void {
         let shoot: Shoot = new Shoot(x, y, false);
         for(let ship of this.nextPlayer.ships) {
@@ -98,15 +80,29 @@ export class BattleShipGameHotSeats extends BattleShipGame {
             }
         }
         this.currentPlayer.shoots.push(shoot);
-    }
+    }    
 
-    
+     switchPlayer(): void {
+         let temp = this.currentPlayer;
+         this.currentPlayer = this.nextPlayer;
+         this.nextPlayer = temp;
+     }
+     
+     isGameOver(): string {
+         
+         if(this.nextPlayer.ships.every(s => s.isDead)) {
+             return this.nextPlayer.name;
+         }         
+         return "";
+     }
 
-    isGameOver(): string {
-        
-        if(this.nextPlayer.ships.every(s => s.isDead)) {
-            return this.nextPlayer.name;
-        }         
-        return "";
+    getLeftBoardShoots(): Shoot[] {
+        return this.nextPlayer.shoots;
     }
+    getRightBoardShoots(): Shoot[] {
+        return this.currentPlayer.shoots;
+    }
+    getShips(): Ship[] {
+        return this.currentPlayer.ships;
+    }   
 }
